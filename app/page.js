@@ -1,113 +1,102 @@
-import Image from "next/image";
+'use client'
+import { useRouter } from 'next/navigation'
+import React from 'react'
 
-export default function Home() {
+const Home = () => {
+  const router = useRouter()
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
+    <div className='flex flex-col text-center gap-5 py-5 border-2 border-white h-full]'>
+      Home Page
+
+
+      {/* use router and link */}
+      <div className="1 container">
+        <button className=' bg-gray-200 text-black p-4 m-2'>Chapter 1: Routing using userRouter</button>
+
+        <p className=' bg-yellow-200 text-black p-4 m-2'>The <span>useRouter hook</span> allows you to programmatically change routes inside Client Components.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+        <p className=' bg-pink-200 text-black p-4 m-2'>
+          <span>Link</span> also used for routing but if routing is done by some interaction on component like on button event click at that time use useRouter
+        </p>
+
+        <button className=' border-2 bg-red-400 p-3'
+          onClick={() => router.push('/about')}> click me  to go on about page</button>
+        <button className=' border-2 bg-red-400 p-3'
+          onClick={() => router.push('/login')}> click me  to go on login page</button>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+
+
+      {/* hide specfic folder from url */}
+      <div className='2 container'>
+        <button className=' bg-gray-200 text-black p-4 m-2'>Chapter 2: Hide routing folder from url</button>
+        <p className=' bg-orange-300 p-3 m-2'>
+          suppose you want create specific folder where all same kind of page present like <span>auth folder</span>
+          which contain page like <span>login</span>
+          <span>register</span> so when you try to go on that page  login then url be like <span>localhost/auth/login</span> but we dont want it we want it like <span>localhost/login</span>
+          for that we can wrap the parent folder <span>auth</span> in <span>()</span>
+        </p>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      {/* dynamic route */}
+      <div className="3 container ">
+        <button className=' bg-gray-200 text-black p-4 m-2'>Chapter 2: Dynamic route</button>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <p className='bg-green-600'>wthen you don't know the exact segment names ahead of time and want to create routes from <span>dynamic data</span>, you can use <span>Dynamic Segments</span> that are filled in at request time or prerendered at build time.</p>
+
+        <p className='bg-green-600'>suppose you have a route <span>/users</span> and that route have multiple users like <span>userA, userB</span> so you not want to create all seperate pages for multiple users like <span>/user/userA</span> and <span>user/userB</span> so on... to avois that we use dynamic routes means we make rout dynamic </p>
+
+        <p className='bg-green-600'>to create <span>dynamic route</span> enclose parent folder in <span>[]</span> its be look like <span>[user]</span> and then iside create another folder named anything you want like <span>allUsers</span> and that that name has to be relative means user have something that define seperate from each other it can be anything like <span>id</span> or <span>slug</span> so genrally use that name in parent page <span>user</span> which has to same what you recieved frim route and then child folder you can create a <span>page.jsx</span> which route be like <span>/user/124</span> and that <span>124</span> is user dynamic id </p>
+
+        <p className='bg-green-600'>and you can access that <span>id</span> of user on user page taking it as props named <span>prams</span> nad <span>id</span> is <span>params.id</span></p>
+
+        <button className='btn'
+          onClick={() => router.push('/user/124')}>click me to go on dynamic route</button>
       </div>
-    </main>
-  );
+
+
+      {/*  catching all routes */}
+      <div className="4 container">
+        <button className=' bg-gray-200 text-black p-4 m-2'>Chapter 2: catch all  route</button>
+
+        <p className=' bg-purple-600'><span>Catch-all routes</span> are useful when you need to handle a varying number of <span>URL segments</span>. For example, you might want to create a route that matches any number of nested categories, like <span>/categories/category1/category2/category3</span>.</p>
+
+        <p className=' bg-purple-600'>to create a catch-all route, you need to include an <span>ellipsis (...)</span> before the parameter name in the filename or folder name, like this: <span>[...categories]</span>. This will match any number of segments following the <span>/categories path</span>.</p>
+
+        <p className=' bg-purple-600'>parent folder <span>project</span> and its child folder can be named anything but make sure name has to relative <span>[...all]</span> now you can create <span>page.jsx</span></p>
+
+        <button onClick={() => router.push('/projects/type/date/')}
+          className="btn"> click me to go on all routes</button>
+      </div>
+
+
+      {/* custom page not found */}
+      <div className="5 container">
+        <button className=' bg-gray-200 text-black p-4 m-2'>Chapter 5: creating custom page not found</button>
+        <p className=' bg-amber-600'>very simple create a page at root of app named <span>not-found.jsx</span></p>
+      </div>
+
+
+      {/*  redirect  */}
+      <div className="6 container">
+        <button className=' bg-gray-200 text-black p-4 m-2'>Chapter 5: redirect</button>
+        <p className="bg-pink-600">
+          The <span>redirect function</span> allows you to redirect the user to <span>another URL</span>. redirect can be used in Server Components, Route Handlers, and Server Actions.
+        </p>
+
+        <p className="bg-pink-600">If a resource doesn't exist, you can use the <span>notFound function</span> instead.</p>
+
+        <p className="bg-pink-600">The redirect function accepts two arguments: <span>path</span> and <span>type</span></p>
+        
+        <button onClick={()=>router.push('/user/4')}
+         className=' btn'
+         > click me to go on user page where is a condition if user is 5 then it will redirect to another url which is login url</button>
+
+      </div>
+    </div>
+  )
 }
+
+export default Home
