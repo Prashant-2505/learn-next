@@ -89,11 +89,25 @@ const Home = () => {
         <p className="bg-pink-600">If a resource doesn't exist, you can use the <span>notFound function</span> instead.</p>
 
         <p className="bg-pink-600">The redirect function accepts two arguments: <span>path</span> and <span>type</span></p>
-        
-        <button onClick={()=>router.push('/user/4')}
-         className=' btn'
-         > click me to go on user page where is a condition if user is 5 then it will redirect to another url which is login url</button>
 
+        <button onClick={() => router.push('/user/4')}
+          className=' btn'
+        > click me to go on user page where is a condition if user is 5 then it will redirect to another url which is login url</button>
+
+      </div>
+
+      {/* meta data */}
+      <div className="6 container">
+        <button className=' bg-gray-200 text-black p-4 m-2'>Chapter 5: Metadata</button>
+        <p className='bg-red-200'><span>MetaData</span> is usefull for seo it is details about the current page client on and that detaisl is reflect on the top of the url at the tab 
+        </p>
+
+        <p className='bg-red-200'><span>MetaData</span> is only is only genrated or used in server components but in next we have to crate client component because we have to use some clint side service like onCLick, useState we almost use this in all pages, means we can use metadata here , so as next js docimentations say that we have to create differnt file where we are using client interaction and then it import it to the page which is server components and then use <span>MetaData </span> for example there is folder named products where we list all products and we have to add clent innteraction so in that page we used some cleint componets but we also create a different page in same product folder which is a server component and that component import that page where we interact with user and now we can use metadata in that server componenets</p>
+      </div>
+
+      {/* fetch data in client component */}
+      <div className="7 container">
+        
       </div>
     </div>
   )
