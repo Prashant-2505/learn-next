@@ -7,7 +7,7 @@ const page = ({params}) => {
        catching all routes and all routs is given
        {params.all.map((route,i)=>{
         return(
-            <p>route {i+1}: {route}</p>
+            <p key={i}>route {i+1}: {route}</p>
         )
        })}
     </div>
